@@ -1,7 +1,10 @@
 import sys
+import re
 
-with open('tintern_abbey.txt') as f:
-    my_list = [line.rstrip('\n') for line in f for word in line.split()]
+with open('tintern_abbey.txt', 'r') as f:
+    words = f.read()
+    my_list = re.sub(r'[^a-zA-Z\s+-]',' ', words).lower()
+    my_list = my_list.split()
     
 def dictionary(words_string):
     hist = {}
