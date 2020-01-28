@@ -17,18 +17,24 @@ def histogram(text):
             hist[word] = hist.get(word, 0) + 1
     return hist
 
-def unique_words():
-    pass
-
+def unique_words(histogram):
+    """
+    Returns how many words
+    are the length given
+    via command log
+    """
+    return len(histogram)
+    
 def frequency(word, histogram):
     """ 
     Gives the frequency of 
-    words in histogram
+    requested words in histogram
+    via command log
     """
     return histogram[word]
 
 if __name__ == '__main__':
-    args = sys.argv[1]
-    #print(frequency('These', histogram(args)))
-    #counted = histogram(my_list)
-    #print(counted)
+    args = sys.argv[1:]
+    #print(frequency('in', histogram(args)))
+    #print(histogram(my_list))
+    #print(unique_words(histogram(args)))
