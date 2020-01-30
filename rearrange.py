@@ -1,7 +1,5 @@
 import random
 import sys as sys
-
-args = sys.argv[1:]
     
 def rearrange():
     
@@ -11,5 +9,7 @@ def rearrange():
         print(random_word)
     return rand_arg
         
-rearrange()
+if __name__ == '__main__':
+    args = sys.argv[1:]
+    rearrange()
 
