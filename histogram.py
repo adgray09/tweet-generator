@@ -1,10 +1,4 @@
 import sys
-
-with open('tintern_abbey.txt', 'r') as f:
-    # my_list = [line.rstrip('\n') for line in f for word in line.split()]
-    # list comprehension
-    my_list = f.readlines()
-    
     
 def histogram(text):
     """
@@ -34,7 +28,13 @@ def frequency(word, histogram):
     return histogram[word]
 
 if __name__ == '__main__':
+    
+    with open('tintern_abbey.txt', 'r') as f:
+        # my_list = [line.rstrip('\n') for line in f for word in line.split()]
+        # list comprehension
+        my_list = f.readlines()
+
     args = sys.argv[1:]
     #print(frequency('in', histogram(args)))
-    #print(histogram(my_list))
+    print(histogram(my_list))
     #print(unique_words(histogram(args)))
