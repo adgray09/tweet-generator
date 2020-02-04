@@ -11,34 +11,32 @@ def histogram(text):
             histogram[word] = histogram.get(word, 0) + 1
     return histogram
 
-def list_histogram(text):
-    histogram = []
+def get_index(word, listogram):
+    """Helper function
+    """
+    current_index = 0
+    for item in listogram:
+        if item[0] == word:
+            return current_index
+        current_index += 1 
+    return -1
+            
+def listogram(text):
+    listogram = []
     for sentences in text:
         sentence = sentences.split()
         for word in sentence:
-            # temp inner list
-            tmp_list = [word, 1]
-            found_word = False
-            found_word_index = None
-            for index, value in enumerate(histogram):
-                if value[0] == tmp_list[0]:
-                    # if word == to word word is found
-                    found_word = True
-                    found_word_index = index
-            if found_word:
-                # word counter
-                histogram[found_word_index][1] += 1
+            index = get_index(word, listogram)
+            if index == -1:
+                listogram.append([word, 1])
             else:
-                # once all word found append temp inner list to histogram
-                histogram.append(tmp_list)
-            found_word = False
-            found_word_index = None
-    return histogram
-                
-def tuple_histogram(text):
+                listogram[index][1] += 1
+    return listogram
+                     
+def tuplegram(text):
+    tuplegram = []
     pass
-
-        
+ 
 def unique_words(histogram):
     """
     Returns how many words
@@ -73,4 +71,4 @@ if __name__ == '__main__':
     #print(histogram(my_list))
     #print(unique_words(histogram(args)))
     #print(my_list)
-    print(list_histogram(my_list))
+    print(listogram(my_list))
