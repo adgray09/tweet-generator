@@ -12,8 +12,12 @@ def generate_words():
     lines =  my_file.readlines()
     my_histogram = histogram(lines)
     
-    word = random_word(my_histogram)
-    return word
+    sentence = ""
+    num_words = 10
+    for i in range(num_words):
+        word = random_word(my_histogram)
+        sentence += " " + word
+    return sentence
 
 if __name__ == '__main__':
     app.run(debug=True)
