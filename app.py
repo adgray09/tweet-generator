@@ -1,6 +1,8 @@
 from flask import Flask 
 from histogram import histogram
 from sample import random_word
+import os
+
 
 app = Flask(__name__)
 
@@ -12,3 +14,6 @@ def generate_words():
     
     word = random_word(my_histogram)
     return word
+
+if __name__ == '__main__':
+    app.run(debug=True)
