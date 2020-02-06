@@ -9,6 +9,7 @@ def random_word(text):
     for word,count in text.items():
         total += count
         if total >= random_index:
+            # if total >= random_index return the word at that spot
             return word
 
 if __name__ == "__main__":
