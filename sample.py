@@ -1,11 +1,9 @@
 import sys
 import random
 from histogram import histogram
-from text import source_text
+from text import read_text
 
-def random_word(): 
-    lines = source_text()
-    text = histogram(lines)
+def random_word(text): 
     random_index = random.randint(0, sum(text.values()))
     total = 0
     for word,count in text.items():
@@ -13,8 +11,9 @@ def random_word():
         if total >= random_index:
             return word
 
-
 if __name__ == "__main__":
+    lines = read_text()
+    text = histogram(lines)
     args = sys.argv[:1]
-    print(random_word())
+    print(random_word(text))
 

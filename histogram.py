@@ -32,11 +32,11 @@ def listogram(text):
             else:
                 listogram[index][1] += 1
     return listogram
-                     
+
 def tuplegram(text):
     tuplegram = []
     pass
- 
+
 def unique_words(histogram):
     """
     Returns how many words
