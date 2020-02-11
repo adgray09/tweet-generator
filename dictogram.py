@@ -18,7 +18,10 @@ class Dictogram:
         pass
     
     def frequency(self, word):
-        pass
+        if word in self.histogram:
+            return self.histogram[word]
+        else:
+            return 0
     
     def sample(self):
         text = histogram(self.text)
@@ -30,8 +33,7 @@ class Dictogram:
             # if total >= random_index return the word at that spot
                 return word
     
-    
-    
 dicto = Dictogram()
 dicto.create_dictogram(read_file("tintern_abbey.txt"))
 print(dicto.sample())
+print(dicto.frequency("my"))
