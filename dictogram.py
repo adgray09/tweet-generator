@@ -1,6 +1,6 @@
 from read_file import read_file
 import random
-from histogram import histogram
+
 
 class Dictogram:
     def __init__(self):
@@ -24,7 +24,7 @@ class Dictogram:
             return 0
     
     def sample(self):
-        text = histogram(self.text)
+        text = self.histogram
         random_index = random.randint(0, sum(text.values()))
         total = 0
         for word,count in text.items():
@@ -35,5 +35,5 @@ class Dictogram:
     
 dicto = Dictogram()
 dicto.create_dictogram(read_file("tintern_abbey.txt"))
-print(dicto.sample())
-print(dicto.frequency("my"))
+#print(dicto.sample())
+#print(dicto.frequency("my"))
