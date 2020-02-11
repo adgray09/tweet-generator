@@ -1,7 +1,7 @@
 import sys
 import random
 from histogram import histogram
-from text import read_text
+from read_file import read_file
 
 def random_word(text): 
     random_index = random.randint(0, sum(text.values()))
@@ -13,7 +13,7 @@ def random_word(text):
             return word
 
 if __name__ == "__main__":
-    lines = read_text()
+    lines = read_file("tintern_abbey.txt")
     text = histogram(lines)
     args = sys.argv[:1]
     print(random_word(text))

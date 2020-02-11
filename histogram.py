@@ -1,6 +1,6 @@
 import sys
     
-def dictogram(text):
+def histogram(text):
     """
     Creates histogram from text file
     """
