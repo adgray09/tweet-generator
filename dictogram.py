@@ -1,3 +1,5 @@
+from read_file import read_file
+
 class Dictogram:
     def __init__(self):
         self.histogram = {}
@@ -8,9 +10,6 @@ class Dictogram:
             for word in sentence:
                 self.histogram[word] = self.histogram.get(word, 0) + 1
         return self.histogram
-        
-with open('tintern_abbey.txt', 'r') as f:
-        my_list = f.readlines()
-        
-bleee = Dictogram()
-print(bleee.create_dictogram(my_list))
+
+dicto = Dictogram()
+print(dicto.create_dictogram(read_file("tintern_abbey.txt")))
