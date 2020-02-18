@@ -1,50 +1,50 @@
-from random import randint
+from read_file import read_file
+import random
 
-class Dictogram:
 
+class Dictogram():
     def __init__(self, word_list):
-        '''Initializes the dictogram properties'''
-
+        self.histogram = {}
+        self.text = read_file("tintern_abbey.txt")
         self.word_list = word_list
-       
+        
         self.dictionary_histogram = self.build_dictogram()
 
         self.tokens = sum(self.dictionary_histogram.values())
         self.types = self.unique_words()
-
-    def build_dictogram(self): 
-        '''Creates a histogram dictionary using the word_list property and returns it'''
-        histogram = {}
-        for word in self.word_list:
-            histogram[word] = histogram.get(word, 0) + 1
-    
-        #TODO: use your histogram function as a starting point to complete this method
-        return histogram
+        
+    def build_dictogram(self, text):
+        for sentences in text:
+            sentence = sentences.split()
+            for word in sentence:
+                self.histogram[word] = self.histogram.get(word, 0) + 1
+        return self.histogram
 
     def frequency(self, word):
-        '''returns the frequency or count of the given word in the dictionary histogram'''
-        '''for word in self.dictionary_histogram:
-            if word in self.dictionary_histogram:
-                return self.dictionary_histogram[word]
-            else:
-                return 0'''
-        return self.dictionary_histogram[word]
-
+        if word in self.histogram:
+            return self.histogram[word]
+        else:
+            return 0
+    
     def unique_words(self):
         '''returns the number of unique words in the dictionary histogram'''
-        return len(self.dictionary_histogram.keys())
         #TODO: use your unique words function as a starting point to complete this method
+        pass
 
     def sample(self):
-        '''Randomly samples from the dictionary histogram based on the frequency, returns a word'''
-        dart = randint(1, self.tokens)
+        text = self.histogram
+        random_index = random.randint(0, sum(text.values()))
         total = 0
-        for word,count in self.dictionary_histogram.items():
+        for word,count in text.items():
             total += count
-            if total >= dart:
+            if total >= random_index:
             # if total >= random_index return the word at that spot
                 return word
-        #TODO: use your sample function as a starting point to complete this method 
+    
+dicto = Dictogram()
+dicto.create_dictogram(read_file("tintern_abbey.txt"))
+#print(dicto.sample())
+#print(dicto.frequency("my"))
 
 def print_dictogram(word_list):
     '''Creates a dictionary based histogram (dictogram) and then prints out its properties and samples from it'''
@@ -99,6 +99,4 @@ def print_dictogram_samples(dictogram):
     print(divider)
     print()
 
-#print_dictogram(['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish'])
-dictogram = Dictogram(['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish'])
-print(dictogram.types)
+print_dictogram(['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish'])
