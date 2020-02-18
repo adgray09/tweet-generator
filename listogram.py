@@ -55,14 +55,20 @@ class Listogram:
         
     def unique_words(self):
         '''returns the number of unique words in the list of lists histogram'''
+        return len(self.list_histogram)
         #TODO: use your unique words function as a starting point to complete this method
         #You will need to adapt it a little bit to work with listogram
-        pass
 
 
     def sample(self):
         '''Randomly samples from the list of list histogram based on the frequency, returns a word'''
-
+        dart = randint(1, self.tokens)
+        total = 0
+        for word,count in self.list_histogram:
+            total += count
+            if total >= dart:
+            # if total >= random_index return the word at that spot
+                return word
         #TODO: use your sample function as a starting point to complete this method 
         #You will need to adapt it a little bit to work with listogram
 
