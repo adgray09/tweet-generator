@@ -1,10 +1,10 @@
 from histogram import histogram
 from sample import random_word
+from read_file import *
 
 def generate_sentence():
-    my_file = open("./tintern_abbey.txt", "r")
-    lines =  my_file.readlines()
-    my_histogram = histogram(lines)
+    my_file = read_file("tintern_abbey.txt")
+    my_histogram = histogram(my_file)
     
     sentence = ""
     num_words = 10
