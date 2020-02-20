@@ -4,7 +4,7 @@ from read_file import *
 
 def generate_sentence():
     my_file = read_file("tintern_abbey.txt")
-    my_histogram = histogram(my_file)
+    my_histogram = histogram(my_file.split("\n"))
     
     sentence = ""
     num_words = 10
