@@ -1,9 +1,10 @@
-from random import randint
+import random
 
 class Dictogram:
 
     def __init__(self, word_list):
         '''Initializes the dictogram properties'''
+        super(Dictogram, self).__init__()
 
         self.word_list = word_list
        
@@ -37,7 +38,7 @@ class Dictogram:
 
     def sample(self):
         '''Randomly samples from the dictionary histogram based on the frequency, returns a word'''
-        dart = randint(1, self.tokens)
+        dart = random.randint(1, self.tokens)
         total = 0
         for word,count in self.dictionary_histogram.items():
             total += count
@@ -98,7 +99,10 @@ def print_dictogram_samples(dictogram):
             + '| {}{:>+7.2%}{} |'.format(color, error, reset))
     print(divider)
     print()
+    
 
 #print_dictogram(['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish'])
 dictogram = Dictogram(['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish'])
+hello = ['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish']
 print(dictogram.types)
+# print_dictogram(hello)
