@@ -24,6 +24,8 @@ class MarkovChain:
                 histogram = markov_chain[current_word]
                 #add to count
                 histogram.dictionary_histogram[next_word] = histogram.dictionary_histogram.get(next_word, 0) + 1
+                histogram.tokens += 1
+                
             else: #first entry
                 markov_chain[current_word] = Dictogram([next_word])
 
@@ -39,6 +41,7 @@ class MarkovChain:
             random_word = self.markov_chain[current_word]
             random_word = random_word.sample()
             sampled_list.append(random_word)
+        
             
         finished_sentence = ' '.join(sampled_list)
         return finished_sentence
@@ -50,5 +53,5 @@ class MarkovChain:
 
 
 markov_chain = MarkovChain(["one", "fish", "two", "fish", "red", "fish", "blue", "fish"])
-markov_chain.print_chain()
+#markov_chain.print_chain()
 print(markov_chain.walk(10))

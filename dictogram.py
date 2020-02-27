@@ -11,6 +11,7 @@ class Dictogram:
         self.dictionary_histogram = self.build_dictogram()
 
         self.tokens = sum(self.dictionary_histogram.values())
+        
         self.types = self.unique_words()
 
     def build_dictogram(self): 
@@ -104,5 +105,5 @@ def print_dictogram_samples(dictogram):
 #print_dictogram(['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish'])
 dictogram = Dictogram(['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish'])
 hello = ['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish']
-print(dictogram.types)
+#print(dictogram.types)
 # print_dictogram(hello)
