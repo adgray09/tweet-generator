@@ -63,7 +63,6 @@ class LinkedList(object):
             count += 1
         return count
         
-
     def append(self, item):
         """Insert the given item at the tail of this linked list.
         TODO: Running time: O(???) Why and under what conditions?"""
@@ -78,7 +77,6 @@ class LinkedList(object):
             self.tail.next = new_node
             self.tail = new_node
             
-        
     def prepend(self, item):
         """Insert the given item at the head of this linked list.
         TODO: Running time: O(???) Why and under what conditions?"""
@@ -99,8 +97,6 @@ class LinkedList(object):
         else:
             return "error"
             
-            
-
     def find(self, quality):
         """Return an item from this linked list satisfying the given quality.
         TODO: Best case running time: O(???) Why and under what conditions?
@@ -138,8 +134,6 @@ class LinkedList(object):
         # TODO: Otherwise raise error to tell user that delete has failed
         # Hint: raise ValueError('Item not found: {}'.format(item))
         
-       
-        
         if self.head != None:
             if self.head == self.tail and self.head.data == item:
                 self.head = None
@@ -150,12 +144,8 @@ class LinkedList(object):
             
         current = self.head.next
         previous = self.head
-        print(self.head)
-        print("Enter")
         
         while current != None:
-            print(previous.data)
-            print(current.data)
             
             if self.head.data == item: #item in the head
                 if self.head.next != None:
@@ -172,46 +162,10 @@ class LinkedList(object):
                     previous.next = current.next
                     return item
             
-            print("Hey")
             previous = current
             current = current.next
         raise ValueError('Item not found: {}'.format(item))
-        
-        
                 
-            
-        
-        
-        
-        
-        # if self.head is None:
-        #     return None
-        # else:
-        #     cur  = self.head
-        #     prev = None
-        #     while cur.data != item and cur.next is not None:
-        #         prev = cur
-        #         cur = cur.next
-
-        #     # when found
-        #     if cur.data == item:
-        #         # if head
-        #         if cur == self.head:
-        #             if cur.next is None:
-        #                 self.head = None
-        #             else:
-        #                 self.head = cur.next
-        #         else:
-        #             if cur.next is None:
-        #                 prev.next = None
-        #             else:
-        #                 prev.next = cur.next
-        #     else:
-        #         return None
-        
-        
-        
-
 def test_linked_list():
     ll = LinkedList()
     print('list: {}'.format(ll))
@@ -240,21 +194,7 @@ def test_linked_list():
         print('head: {}'.format(ll.head))
         print('tail: {}'.format(ll.tail))
         print('length: {}'.format(ll.length()))
-        
-    ll = LinkedList(['A', 'B', 'C', 'D', 'E'])
-    ll.print_list()
-    ll.delete('A')
-    ll.print_list()
-    ll.delete('E')
-    ll.print_list()
-    ll.delete('C')
-    ll.print_list()
-    ll.delete('D')
-    ll.print_list()
-    ll.delete('B')
-    ll.print_list()
-
-
+    
 if __name__ == '__main__':
     
     test_linked_list()
