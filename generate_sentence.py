@@ -1,6 +1,7 @@
 from histogram import histogram
 from sample import random_word
-from read_file import *
+from read_file import read_file
+from markov import MarkovChain
 
 def generate_sentence():
     my_file = read_file("tintern_abbey.txt")

@@ -53,5 +53,5 @@ class MarkovChain:
 
 
 markov_chain = MarkovChain(["one", "fish", "two", "fish", "red", "fish", "blue", "fish"])
-#markov_chain.print_chain()
-print(markov_chain.walk(10))
+# markov_chain.print_chain()
+# print(markov_chain.walk(10))
