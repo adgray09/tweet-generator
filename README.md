@@ -1,1 +1,11 @@
-# CS-1.2-Intro-Data-Structures
+# Tweet-generator
+
+---
+
+## Build the container
+
+'
+docker build -t flask-image .
+'
+
+
