@@ -13,16 +13,13 @@ def render_page():
     chain = MarkovChain(my_list)
     num_words = int(10) - 1
     my_sentence = chain.walk(num_words)
-    #print(my_sentence)
     
     my_list2 = read_file("the_rime.txt")
     chain2 = MarkovChain(my_list2)
     num_words2 = int(10) - 1
     my_sentence2 = chain2.walk(num_words2)    
     
-    
     return render_template('index.html', sentence=my_sentence, sentence2=my_sentence2)
-    # print(type(of thing you are looping through))
 
 if __name__ == '__main__':
     app.run(debug=True)
