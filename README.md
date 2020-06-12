@@ -4,15 +4,11 @@
 
 # Docker steps
 
----
-
 ## Build the Image
 
 ```
 docker build -t flask-image .
 ```
-
----
 
 ## Build the container
 
