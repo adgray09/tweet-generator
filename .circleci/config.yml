@@ -12,7 +12,7 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          command: pip install -r requirements/dev.txt
+          command: pip install -r requirements.txt
           name: Test
 
 workflows:

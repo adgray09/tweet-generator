@@ -3,6 +3,7 @@ FROM python:3.7-slim-buster
 
 # STEP 2:
 RUN pip install Flask
+RUN pip install pymongo
 
 # STEP 3:
 ADD . /app
